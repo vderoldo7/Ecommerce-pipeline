@@ -1,5 +1,20 @@
+# Install dependencies as needed:
+# pip install kagglehub[pandas-datasets]
 import kagglehub
+from kagglehub import KaggleDatasetAdapter
 
-path = kagglehub.dataset_download("mos3santos/conjunto-de-dados-de-precos-de-carros")
+# Set the path to the file you'd like to load
+file_path = ""
 
-print("Path to dataset files:", path)
+# Load the latest version
+df = kagglehub.load_dataset(
+  KaggleDatasetAdapter.PANDAS,
+  "abbas829/ecommerce-sales-dataset",
+  file_path,
+  # Provide any additional arguments like 
+  # sql_query or pandas_kwargs. See the 
+  # documenation for more information:
+  # https://github.com/Kaggle/kagglehub/blob/main/README.md#kaggledatasetadapterpandas
+)
+
+print("First 5 records:", df.head())
