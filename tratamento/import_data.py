@@ -14,7 +14,7 @@ print(f"CSV carregado: {len(df)} registros")
 # 2. Conectar ao Oracle
 # ==========================================
 
-username = "rm565537"
+username = ""
 password = input("Digite sua senha do Oracle: ")
 
 connection = oracledb.connect(
